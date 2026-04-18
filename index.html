@@ -6,75 +6,71 @@
     <title>Paris Appliance Repair LLC | Authorized Whirlpool, Maytag, KitchenAid & Speed Queen</title>
     <meta name="description" content="Professional appliance repair services in Paris, TX. Factory-authorized servicer for Whirlpool, Maytag, KitchenAid, JennAir, Amana, and Speed Queen.">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Paris Appliance Repair LLC",
-      "image": "", 
-      "telePhone": "903-272-0840",
-      "email": "parisappliancerepair@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris",
-        "addressRegion": "TX",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.6610,
-        "longitude": -95.5555
-      },
-      "openingHours": "Mo-Fr 08:00-12:00, 13:00-17:00",
-      "url": "http://parisappliancerepair.com"
-    }
-    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;400i&display=swap" rel="stylesheet">
 
     <style>
         /* Global Styles */
         :root {
             --primary-blue: #0056b3;
-            --dark-blue: #004494;
+            --dark-blue: #003d82;
+            --accent-orange: #f26a21; 
+            --accent-hover: #d95a1a;
             --light-bg: #f8f9fa;
             --section-bg: #f0f5fa; 
-            --text-dark: #333;
+            --text-dark: #2b2b2b;
+            --text-light: #555555;
+            --star-gold: #ffc107;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', sans-serif; 
             margin: 0;
             padding: 0;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 { color: var(--primary-blue); }
+        h1, h2, h3, h4 { 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--primary-blue); 
+        }
 
         .btn {
             display: inline-block;
-            background-color: var(--primary-blue);
+            background-color: var(--accent-orange); 
             color: #fff;
-            padding: 12px 25px;
+            padding: 14px 28px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.2s ease;
+            border-radius: 6px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(242, 106, 33, 0.3); 
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover { 
-            background-color: var(--dark-blue); 
+            background-color: var(--accent-hover); 
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 106, 33, 0.4);
         }
 
-        /* Header */
+        /* Header & Navigation */
         header {
             background-color: #fff;
-            padding: 15px 10%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -82,83 +78,192 @@
 
         .logo {
             font-size: 22px;
-            font-weight: bold;
+            font-weight: 800;
             color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.5px;
+            text-decoration: none;
         }
 
-        /* Hero Section - Side-by-Side Layout */
+        .main-nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        .header-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Cinematic Hero Section - Lightened Blue Overlay */
         .hero {
-            background: linear-gradient(135deg, #e0ecfb 0%, #f8f9fa 100%);
-            padding: 80px 10%;
+            background-color: var(--dark-blue);
+            background-image: linear-gradient(rgba(0, 86, 179, 0.6), rgba(0, 56, 117, 0.8)), url('https://parisappliancerepair.com/servicevan.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 90px 10%;
             display: flex;
             flex-direction: row; 
             align-items: center;
             justify-content: space-between;
             gap: 50px;
+            border-bottom: 5px solid var(--accent-orange); 
         }
 
         .hero-image-container {
             flex: 1; 
             display: flex;
             justify-content: center;
+            position: relative;
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 90%;
+            background-color: rgba(255, 255, 255, 0.08); 
+            border-radius: 50%;
+            z-index: 0;
+            top: 5%;
         }
 
         .tower-image {
             max-width: 100%; 
             max-height: 450px; 
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content {
-            flex: 1; 
+            flex: 1.2; 
             text-align: left; 
         }
 
-        .hero h1 { font-size: 2.8rem; margin-top: 0; margin-bottom: 15px; color: var(--text-dark); line-height: 1.2; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #555; }
+        .hero h1 { font-size: 3rem; margin-top: 0; margin-bottom: 20px; color: #fff; line-height: 1.15; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+
+        /* Trust Checkmarks */
+        .trust-marks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .trust-marks span {
+            font-size: 0.9rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            background-color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 
         /* Services Section */
         .services { 
             background-color: var(--section-bg); 
-            padding: 80px 10%; 
+            padding: 90px 10%; 
             text-align: center; 
         }
         
+        .services h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark-blue); }
+
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         .service-card {
             background: #fff;
-            padding: 30px 25px;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--primary-blue); 
+            padding: 40px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent; 
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-bottom: 4px solid var(--accent-orange); 
         }
 
-        .service-card h3 { margin-top: 0; }
+        .service-icon {
+            margin-bottom: 20px;
+            display: inline-block;
+            background-color: #eef5fc;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        .service-card h3 { margin-top: 0; font-size: 1.3rem; }
+        .service-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 0; }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: #fff;
+            padding: 90px 10%;
+            text-align: center;
+        }
+
+        .reviews h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark-blue); }
+        .reviews > p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 40px; }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .review-card {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stars { color: var(--star-gold); font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 2px; }
+        .review-text { font-style: italic; color: var(--text-dark); margin-bottom: 20px; font-size: 1rem; line-height: 1.6; }
+        .review-author { margin: 0; font-weight: 700; color: var(--primary-blue); font-size: 0.95rem; }
 
         /* Brands Section */
         .brands {
-            background-color: #fff; 
+            background-color: var(--section-bg); 
             padding: 80px 10%;
             text-align: center;
         }
+        
+        .brands h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark-blue); }
+
         .brand-grid {
             display: flex;
             justify-content: center;
             align-items: flex-end; 
-            gap: 40px;
+            gap: 45px;
             margin-top: 40px;
             flex-wrap: wrap;
         }
@@ -175,110 +280,163 @@
             max-height: 65px; 
             object-fit: contain;
             margin-bottom: 15px;
-            filter: grayscale(30%);
-            transition: filter 0.3s ease, transform 0.3s ease;
+            filter: grayscale(40%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
         }
         .brand-item img:hover {
             filter: grayscale(0%);
-            transform: scale(1.05); 
+            opacity: 1;
+            transform: scale(1.08); 
         }
         .brand-item h4 {
             margin: 0;
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1; 
+            color: #777;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
 
         /* About Section */
         .about {
             background-color: var(--primary-blue);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
             color: #fff;
-            padding: 80px 15%;
+            padding: 90px 15%;
             text-align: center;
         }
-        .about h2 { color: #fff; margin-top: 0; }
-        .about p { font-size: 1.1rem; line-height: 1.8; max-width: 900px; margin: 0 auto; }
+        .about h2 { color: #fff; margin-top: 0; font-size: 2.2rem; }
+        .about p { font-size: 1.15rem; line-height: 1.8; max-width: 900px; margin: 0 auto; color: #eef5fc; }
 
-        /* Footer / Contact - Multi-column Layout */
+        /* Contact Form Section */
+        .contact-section {
+            background-color: #fff;
+            padding: 90px 10%;
+            text-align: center;
+        }
+
+        .contact-section h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark-blue); }
+        .contact-section > p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 40px; }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fdfdfd;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+
+        textarea.form-control { resize: vertical; }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
         footer {
-            background-color: #222;
+            background-color: #1a1a1a;
             color: #fff;
-            padding: 60px 10% 40px 10%;
+            padding: 70px 10% 40px 10%;
             text-align: left; 
         }
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
-        .footer-col h3 { color: #fff; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; }
-        .footer-col p { margin: 10px 0; color: #ddd; font-size: 0.95rem; }
-        .footer-col a { color: #66b2ff; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col h3 { color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.3rem; }
+        .footer-col p { margin: 10px 0; color: #bbb; font-size: 0.95rem; }
+        .footer-col a { color: var(--accent-orange); text-decoration: none; transition: color 0.3s ease; font-weight: 600; }
         .footer-col a:hover { color: #fff; }
         
-        .service-areas {
-            font-size: 0.85rem !important;
-            line-height: 1.8;
-            color: #aaa !important;
-        }
+        .service-areas { font-size: 0.85rem !important; line-height: 1.8; color: #999 !important; }
 
         .disclaimer {
-            font-size: 0.85rem;
-            color: #777;
+            font-size: 0.8rem;
+            color: #666;
             text-align: center;
             max-width: 900px;
             margin: 40px auto 10px auto;
-            border-top: 1px solid #444;
-            padding-top: 20px;
+            border-top: 1px solid #333;
+            padding-top: 25px;
             line-height: 1.6;
         }
 
-        /* Mobile Sticky Button - Hidden by default */
-        .mobile-sticky-btn {
-            display: none; 
-        }
+        /* Mobile Sticky Button */
+        .mobile-sticky-btn { display: none; }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; gap: 15px; }
-            
-            /* Stacks the Hero section on mobile */
-            .hero { flex-direction: column; text-align: center; gap: 30px; }
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 60px; }
             .hero-content { text-align: center; }
-            .hero h1 { font-size: 2.2rem; }
-            
-            .brand-grid { gap: 30px; }
-            .services, .brands, .about, .hero { padding-top: 50px; padding-bottom: 50px; }
-            
-            /* Adds padding to the bottom of the whole site so the sticky button doesn't cover footer text */
-            body { padding-bottom: 65px; }
-            
-            /* Center align footer on mobile */
-            footer { text-align: center; }
-            .footer-grid { gap: 30px; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-image-container::before { width: 90%; }
+            .trust-marks { justify-content: center; }
+        }
 
-            /* Mobile Sticky Button - Becomes visible only on mobile */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            .main-nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .brand-grid { gap: 30px; }
+            .services, .reviews, .brands, .about, .hero, .contact-section { padding-top: 60px; padding-bottom: 60px; }
+            body { padding-bottom: 65px; }
+            footer { text-align: center; padding-top: 50px; }
+            .footer-grid { gap: 40px; }
+            .form-container { padding: 25px 15px; }
+
             .mobile-sticky-btn {
                 display: block;
                 position: fixed;
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                background-color: #28a745; 
+                background-color: var(--accent-orange); 
                 color: #fff;
                 text-align: center;
-                padding: 16px 0;
-                font-size: 1.2rem;
-                font-weight: bold;
+                padding: 18px 0;
+                font-size: 1.1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
                 text-decoration: none;
                 z-index: 2000; 
                 box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
-            }
-            .mobile-sticky-btn:hover {
-                background-color: #218838;
             }
         }
     </style>
@@ -286,80 +444,165 @@
 <body>
 
     <header>
-        <div class="logo">Paris Appliance Repair LLC</div>
-        <a href="tel:9032720840" class="btn">📞 (903) 272-0840</a>
+        <a href="#" class="logo">Paris Appliance Repair LLC</a>
+        <nav class="main-nav">
+            <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">About</a>
+        </nav>
+        <a href="#contact" class="btn header-btn">Contact Us</a>
     </header>
 
     <section class="hero">
         <div class="hero-image-container">
-            <img src="tower.png" alt="Eiffel Tower of Paris, Texas with Cowboy Hat" class="tower-image">
+            <img src="https://parisappliancerepair.com/tower.png" alt="Eiffel Tower of Paris, Texas with Cowboy Hat" class="tower-image">
         </div>
         <div class="hero-content">
             <h1>Reliable Appliance Repair in Paris, TX</h1>
             <p>Fast, professional, and locally owned. We get your household running smoothly again with expert repairs you can trust.</p>
             <a href="#contact" class="btn">Schedule a Repair Today</a>
+            
+            <div class="trust-marks">
+                <span>✅ Locally Owned & Operated</span>
+                <span>✅ Factory Authorized Service</span>
+                <span>✅ Honest, Transparent Pricing</span>
+            </div>
         </div>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
         <h2>What We Fix</h2>
         <div class="service-grid">
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="5" y1="9" x2="19" y2="9"></line><line x1="9" y1="4" x2="9" y2="7"></line><line x1="9" y1="11" x2="9" y2="14"></line></svg>
+                </div>
                 <h3>Refrigerators</h3>
                 <p>Cooling issues, leaks, or strange noises? We diagnose and fix it fast.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><circle cx="12" cy="13" r="5"></circle><line x1="16" y1="6" x2="16.01" y2="6"></line><line x1="12" y1="6" x2="12.01" y2="6"></line></svg>
+                </div>
                 <h3>Washers & Dryers</h3>
                 <p>From drum issues to electrical faults, we keep your laundry routine on track.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><circle cx="8" cy="15" r="2"></circle><circle cx="16" cy="15" r="2"></circle><line x1="7" y1="6" x2="7.01" y2="6"></line><line x1="12" y1="6" x2="12.01" y2="6"></line><line x1="17" y1="6" x2="17.01" y2="6"></line></svg>
+                </div>
                 <h3>Ovens & Stoves</h3>
                 <p>Heating element replacements and temperature calibration.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="4" y1="6" x2="20" y2="6"></line><line x1="8" y1="14" x2="16" y2="14"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
+                </div>
                 <h3>Dishwashers</h3>
                 <p>Resolving drainage problems, poor cleaning, and control failures.</p>
             </div>
         </div>
     </section>
 
+    <section id="reviews" class="reviews">
+        <h2>What Our Neighbors Say</h2>
+        <p>Real reviews from local homeowners and businesses we've helped.</p>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"We use Paris Appliance Repair for all of our warranty work at Texas Furniture & Appliance. I can say as someone who has issued hundreds of service calls, there is NO ONE better."</p>
+                <h4 class="review-author">— Austin Anthony</h4>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Lacy was very friendly and professional to help me get my repair scheduled. She was very helpful with the exact cost... NO SURPRISES! Wayne is very knowledgeable and explained why it needed the part replaced. I would highly recommend him."</p>
+                <h4 class="review-author">— Mary Y.</h4>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Excellent repair service with friendly employees. He came out and diagnosed the problem quickly. Highly recommend!"</p>
+                <h4 class="review-author">— Local Customer</h4>
+            </div>
+        </div>
+    </section>
+
     <section class="brands">
         <h2>Factory Authorized Servicer</h2>
-        <p>We are proud to be fully authorized to provide in-warranty and out-of-warranty service for industry-leading brands.</p>
+        <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 30px;">We are proud to be fully authorized to provide in-warranty and out-of-warranty service for industry-leading brands.</p>
         <div class="brand-grid">
             <div class="brand-item">
-                <img src="whirlpool.png" alt="Authorized Whirlpool Repair">
+                <img src="https://parisappliancerepair.com/whirlpool.png" alt="Authorized Whirlpool Repair">
                 <h4>Whirlpool</h4>
             </div>
             <div class="brand-item">
-                <img src="maytag.png" alt="Authorized Maytag Repair">
+                <img src="https://parisappliancerepair.com/maytag.png" alt="Authorized Maytag Repair">
                 <h4>Maytag</h4>
             </div>
             <div class="brand-item">
-                <img src="kitchenaid.png" alt="Authorized KitchenAid Repair">
+                <img src="https://parisappliancerepair.com/kitchenaid.png" alt="Authorized KitchenAid Repair">
                 <h4>KitchenAid</h4>
             </div>
             <div class="brand-item">
-                <img src="jennair.png" alt="Authorized JennAir Repair">
+                <img src="https://parisappliancerepair.com/jennair.png" alt="Authorized JennAir Repair">
                 <h4>JennAir</h4>
             </div>
             <div class="brand-item">
-                <img src="amana.png" alt="Authorized Amana Repair">
+                <img src="https://parisappliancerepair.com/amana.png" alt="Authorized Amana Repair">
                 <h4>Amana</h4>
             </div>
             <div class="brand-item">
-                <img src="speedqueen.png" alt="Authorized Speed Queen Repair">
+                <img src="https://parisappliancerepair.com/speedqueen.png" alt="Authorized Speed Queen Repair">
                 <h4>Speed Queen</h4>
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
         <h2>Your Local Experts</h2>
         <p>As a local business proudly serving Northeast Texas and Southeast Oklahoma, we pride ourselves on honest communication and doing the job right the first time. We're committed to keeping homes across our entire region running efficiently.</p>
     </section>
 
-    <footer id="contact">
+    <section id="contact" class="contact-section">
+        <h2>Request Service</h2>
+        <p>Fill out the form below or call us directly at <strong>(903) 272-0840</strong>.</p>
+        
+        <div class="form-container">
+            <form action="https://formspree.io/f/mbdqyynl" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="Name" class="form-control" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="Phone" class="form-control" placeholder="(903) 555-0123" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appliance">Appliance Type</label>
+                    <select id="appliance" name="Appliance_Type" class="form-control" required>
+                        <option value="" disabled selected>Select an appliance...</option>
+                        <option value="Refrigerator">Refrigerator</option>
+                        <option value="Washer">Washer</option>
+                        <option value="Dryer">Dryer</option>
+                        <option value="Oven/Stove">Oven / Stove</option>
+                        <option value="Dishwasher">Dishwasher</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="issue">Describe the Issue</label>
+                    <textarea id="issue" name="Issue_Description" class="form-control" rows="4" placeholder="E.g., The fridge is warm but the freezer is still cold..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn form-submit">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>Contact Us</h3>
@@ -381,16 +624,22 @@
                     <strong>Oklahoma:</strong> Fort Towson, Hugo.
                 </p>
             </div>
+            
+            <div class="footer-col">
+                <h3>Leave a Review</h3>
+                <p>Happy with your repair? We'd love to hear about it!</p>
+                <a href="https://g.page/r/CZfSgiDL4YE5EBM/review" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem; margin-top: 10px; text-transform: none; letter-spacing: 0;">⭐ Review us on Google</a>
+            </div>
         </div>
         
         <p class="disclaimer">
             <em>Whirlpool, Maytag, KitchenAid, JennAir, Amana, and Speed Queen are registered trademarks of their respective owners. Paris Appliance Repair LLC is an independent service provider authorized to perform repairs on these brands. Any other trademarks or brand names mentioned are the property of their respective owners.</em>
         </p>
         
-        <p style="font-size: 0.9rem; color: #777; margin-top: 15px; text-align: center;">&copy; 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem; color: #555; margin-top: 15px; text-align: center;">© 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
     </footer>
 
-    <a href="tel:9032720840" class="mobile-sticky-btn">📞 Tap to Call: (903) 272-0840</a>
+    <a href="tel:9032720840" class="mobile-sticky-btn">Tap to Call: (903) 272-0840</a>
 
 </body>
 </html>

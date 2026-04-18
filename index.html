@@ -11,7 +11,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Paris Appliance Repair LLC",
-      "image": "http://parisappliancerepair.com/tower.png", 
+      "image": "", 
       "telePhone": "903-272-0840",
       "email": "parisappliancerepair@gmail.com",
       "address": {
@@ -77,14 +77,9 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-        
-        .logo img {
-            max-height: 60px; /* Adjust this number to make your logo bigger or smaller */
-            width: auto;
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-blue);
         }
 
         /* Hero Section */
@@ -130,7 +125,7 @@
         .brand-grid {
             display: flex;
             justify-content: center;
-            align-items: flex-end; 
+            align-items: flex-end; /* Aligns items to the bottom baseline */
             gap: 40px;
             margin-top: 30px;
             flex-wrap: wrap;
@@ -141,11 +136,11 @@
             justify-content: flex-end;
             align-items: center;
             flex: 0 1 120px;
-            height: 110px; 
+            height: 110px; /* Fixed height for the entire block */
         }
         .brand-item img {
             max-width: 120px;
-            max-height: 65px; 
+            max-height: 65px; /* Ensures logos never overlap text */
             object-fit: contain;
             margin-bottom: 12px;
             filter: grayscale(20%);
@@ -158,7 +153,7 @@
             margin: 0;
             color: var(--text-dark);
             font-size: 1rem;
-            line-height: 1; 
+            line-height: 1; /* Keeps text height totally uniform */
         }
 
         /* About Section */
@@ -195,7 +190,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; gap: 15px; }
+            header { flex-direction: column; text-align: center; gap: 10px; }
             .hero h1 { font-size: 2rem; }
             .brand-grid { gap: 25px; }
         }
@@ -204,9 +199,7 @@
 <body>
 
     <header>
-        <a href="#" class="logo">
-            <img src="tower.png" alt="Paris Appliance Repair LLC Logo">
-        </a>
+        <div class="logo">Paris Appliance Repair LLC</div>
         <a href="tel:9032720840" class="btn">📞 (903) 272-0840</a>
     </header>
 
@@ -278,15 +271,4 @@
         <h3>Contact Us</h3>
         <p>Proudly serving <strong>Paris, Texas</strong> and surrounding Lamar County areas.</p>
         <p><strong>Phone:</strong> <a href="tel:9032720840">(903) 272-0840</a></p>
-        <p><strong>Email:</strong> <a href="mailto:parisappliancerepair@gmail.com">parisappliancerepair@gmail.com</a></p>
-        <p><strong>Hours:</strong> Mon - Fri: 8:00 AM - 5:00 PM</p>
-        
-        <p class="disclaimer">
-            <em>Whirlpool, Maytag, KitchenAid, JennAir, Amana, and Speed Queen are registered trademarks of their respective owners. Paris Appliance Repair LLC is an independent service provider authorized to perform repairs on these brands. Any other trademarks or brand names mentioned are the property of their respective owners.</em>
-        </p>
-        
-        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">&copy; 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+        <p><strong>Email:</strong> <a href="mailto:paris

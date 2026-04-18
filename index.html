@@ -107,7 +107,7 @@
             font-size: 0.9rem;
         }
 
-        /* Cinematic Hero Section - Lightened Blue Overlay */
+        /* Cinematic Hero Section */
         .hero {
             background-color: var(--dark-blue);
             background-image: linear-gradient(rgba(0, 86, 179, 0.6), rgba(0, 56, 117, 0.8)), url('https://parisappliancerepair.com/servicevan.jpg');
@@ -250,6 +250,20 @@
         .review-text { font-style: italic; color: var(--text-dark); margin-bottom: 20px; font-size: 1rem; line-height: 1.6; }
         .review-author { margin: 0; font-weight: 700; color: var(--primary-blue); font-size: 0.95rem; }
 
+        /* CTA Review Area */
+        .review-cta {
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 1px solid #eee;
+        }
+
+        .review-cta h3 {
+            font-size: 1.6rem;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
         /* Brands Section */
         .brands {
             background-color: var(--section-bg); 
@@ -375,7 +389,8 @@
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /* Changed back to 3 columns since we moved the review button */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -384,9 +399,6 @@
         .footer-col p { margin: 10px 0; color: #bbb; font-size: 0.95rem; }
         .footer-col a { color: var(--accent-orange); text-decoration: none; transition: color 0.3s ease; font-weight: 600; }
         .footer-col a:hover { color: #fff; }
-        
-        /* This prevents footer buttons from turning orange */
-        .footer-col a.btn { color: #fff; }
         
         .service-areas { font-size: 0.85rem !important; line-height: 1.8; color: #999 !important; }
 
@@ -527,6 +539,11 @@
                 <h4 class="review-author">— Local Customer</h4>
             </div>
         </div>
+        
+        <div class="review-cta">
+            <h3>Happy with your repair? We'd love to hear about it!</h3>
+            <a href="https://g.page/r/CZfSgiDL4YE5EBM/review" target="_blank" class="btn" style="text-transform: none; letter-spacing: 0;">⭐ Review us on Google</a>
+        </div>
     </section>
 
     <section class="brands">
@@ -626,12 +643,6 @@
                     <strong>Texas:</strong> Arthur City, Bagwell, Bogata, Bonham, Clarksville, Commerce, Cooper, Deport, Detroit, Dodd City, Honey Grove, Mt Vernon, Paris, Scroggins, Sulphur Springs, Sumner, Winnsboro.<br><br>
                     <strong>Oklahoma:</strong> Fort Towson, Hugo.
                 </p>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Leave a Review</h3>
-                <p>Happy with your repair? We'd love to hear about it!</p>
-                <a href="https://g.page/r/CZfSgiDL4YE5EBM/review" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem; margin-top: 10px; text-transform: none; letter-spacing: 0; color: #fff;">⭐ Review us on Google</a>
             </div>
         </div>
         

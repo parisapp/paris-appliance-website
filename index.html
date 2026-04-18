@@ -25,7 +25,7 @@
         "latitude": 33.6610,
         "longitude": -95.5555
       },
-      "openingHours": "Mo-Fr 08:00-17:00",
+      "openingHours": "Mo-Fr 08:00-12:00, 13:00-17:00",
       "url": "http://parisappliancerepair.com"
     }
     </script>
@@ -91,14 +91,14 @@
             background: linear-gradient(135deg, #e0ecfb 0%, #f8f9fa 100%);
             padding: 80px 10%;
             display: flex;
-            flex-direction: row; /* Puts items side-by-side */
+            flex-direction: row; 
             align-items: center;
             justify-content: space-between;
             gap: 50px;
         }
 
         .hero-image-container {
-            flex: 1; /* Takes up half the screen */
+            flex: 1; 
             display: flex;
             justify-content: center;
         }
@@ -111,8 +111,8 @@
         }
 
         .hero-content {
-            flex: 1; /* Takes up the other half */
-            text-align: left; /* Left aligns the text for a cleaner look */
+            flex: 1; 
+            text-align: left; 
         }
 
         .hero h1 { font-size: 2.8rem; margin-top: 0; margin-bottom: 15px; color: var(--text-dark); line-height: 1.2; }
@@ -199,23 +199,37 @@
         .about h2 { color: #fff; margin-top: 0; }
         .about p { font-size: 1.1rem; line-height: 1.8; }
 
-        /* Footer / Contact */
+        /* Footer / Contact - Multi-column Layout */
         footer {
             background-color: #222;
             color: #fff;
-            text-align: center;
             padding: 60px 10% 40px 10%;
+            text-align: left; /* Shift text alignment left for columns */
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 { color: #fff; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; }
+        .footer-col p { margin: 10px 0; color: #ddd; font-size: 0.95rem; }
+        .footer-col a { color: #66b2ff; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col a:hover { color: #fff; }
+        
+        .service-areas {
+            font-size: 0.85rem !important;
+            line-height: 1.8;
+            color: #aaa !important;
         }
 
-        footer h3 { color: #fff; margin-top: 0; margin-bottom: 20px; }
-        footer p { margin: 10px 0; }
-        footer a { color: #66b2ff; text-decoration: none; transition: color 0.3s ease; }
-        footer a:hover { color: #fff; }
-        
         .disclaimer {
             font-size: 0.85rem;
-            color: #888;
-            max-width: 800px;
+            color: #777;
+            text-align: center;
+            max-width: 900px;
             margin: 40px auto 10px auto;
             border-top: 1px solid #444;
             padding-top: 20px;
@@ -241,6 +255,10 @@
             
             /* Adds padding to the bottom of the whole site so the sticky button doesn't cover footer text */
             body { padding-bottom: 65px; }
+            
+            /* Center align footer on mobile */
+            footer { text-align: center; }
+            .footer-grid { gap: 30px; }
 
             /* Mobile Sticky Button - Becomes visible only on mobile */
             .mobile-sticky-btn {
@@ -249,14 +267,14 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                background-color: #28a745; /* A highly clickable bright green for emergency calls */
+                background-color: #28a745; 
                 color: #fff;
                 text-align: center;
                 padding: 16px 0;
                 font-size: 1.2rem;
                 font-weight: bold;
                 text-decoration: none;
-                z-index: 2000; /* Ensures it stays above absolutely everything else */
+                z-index: 2000; 
                 box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
             }
             .mobile-sticky-btn:hover {
@@ -342,17 +360,34 @@
     </section>
 
     <footer id="contact">
-        <h3>Contact Us</h3>
-        <p>Proudly serving <strong>Paris, Texas</strong> and surrounding Lamar County areas.</p>
-        <p><strong>Phone:</strong> <a href="tel:9032720840">(903) 272-0840</a></p>
-        <p><strong>Email:</strong> <a href="mailto:parisappliancerepair@gmail.com">parisappliancerepair@gmail.com</a></p>
-        <p><strong>Hours:</strong> Mon - Fri: 8:00 AM - 5:00 PM</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> <a href="tel:9032720840">(903) 272-0840</a></p>
+                <p><strong>Email:</strong> <a href="mailto:parisappliancerepair@gmail.com">parisappliancerepair@gmail.com</a></p>
+                <p style="margin-top: 15px;"><em>Proudly serving Paris, Texas and the surrounding region.</em></p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Business Hours</h3>
+                <p><strong>Monday - Friday:</strong><br>8:00 AM – 12:00 PM<br>1:00 PM – 5:00 PM</p>
+                <p style="margin-top: 10px;"><strong>Saturday & Sunday:</strong><br>Closed</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Service Areas</h3>
+                <p class="service-areas">
+                    <strong>Texas:</strong> Arthur City, Bagwell, Bogata, Bonham, Clarksville, Commerce, Cooper, Deport, Detroit, Dodd City, Honey Grove, Mt Vernon, Paris, Scroggins, Sulphur Springs, Sumner, Winnsboro.<br><br>
+                    <strong>Oklahoma:</strong> Fort Towson, Hugo.
+                </p>
+            </div>
+        </div>
         
         <p class="disclaimer">
             <em>Whirlpool, Maytag, KitchenAid, JennAir, Amana, and Speed Queen are registered trademarks of their respective owners. Paris Appliance Repair LLC is an independent service provider authorized to perform repairs on these brands. Any other trademarks or brand names mentioned are the property of their respective owners.</em>
         </p>
         
-        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">&copy; 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem; color: #777; margin-top: 15px; text-align: center;">&copy; 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
     </footer>
 
     <a href="tel:9032720840" class="mobile-sticky-btn">📞 Tap to Call: (903) 272-0840</a>

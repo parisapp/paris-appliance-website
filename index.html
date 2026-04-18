@@ -84,8 +84,12 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), #e9ecef;
-            padding: 80px 10%;
+            /* This adds the image as a background with a white frosted overlay */
+            background: linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.85)), url('tower.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 100px 10%;
             text-align: center;
         }
 
@@ -125,7 +129,7 @@
         .brand-grid {
             display: flex;
             justify-content: center;
-            align-items: flex-end; /* Aligns items to the bottom baseline */
+            align-items: flex-end; 
             gap: 40px;
             margin-top: 30px;
             flex-wrap: wrap;
@@ -136,11 +140,11 @@
             justify-content: flex-end;
             align-items: center;
             flex: 0 1 120px;
-            height: 110px; /* Fixed height for the entire block */
+            height: 110px; 
         }
         .brand-item img {
             max-width: 120px;
-            max-height: 65px; /* Ensures logos never overlap text */
+            max-height: 65px; 
             object-fit: contain;
             margin-bottom: 12px;
             filter: grayscale(20%);
@@ -153,7 +157,7 @@
             margin: 0;
             color: var(--text-dark);
             font-size: 1rem;
-            line-height: 1; /* Keeps text height totally uniform */
+            line-height: 1; 
         }
 
         /* About Section */
@@ -271,4 +275,15 @@
         <h3>Contact Us</h3>
         <p>Proudly serving <strong>Paris, Texas</strong> and surrounding Lamar County areas.</p>
         <p><strong>Phone:</strong> <a href="tel:9032720840">(903) 272-0840</a></p>
-        <p><strong>Email:</strong> <a href="mailto:paris
+        <p><strong>Email:</strong> <a href="mailto:parisappliancerepair@gmail.com">parisappliancerepair@gmail.com</a></p>
+        <p><strong>Hours:</strong> Mon - Fri: 8:00 AM - 5:00 PM</p>
+        
+        <p class="disclaimer">
+            <em>Whirlpool, Maytag, KitchenAid, JennAir, Amana, and Speed Queen are registered trademarks of their respective owners. Paris Appliance Repair LLC is an independent service provider authorized to perform repairs on these brands. Any other trademarks or brand names mentioned are the property of their respective owners.</em>
+        </p>
+        
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">&copy; 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

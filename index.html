@@ -36,7 +36,7 @@
             --primary-blue: #0056b3;
             --dark-blue: #004494;
             --light-bg: #f8f9fa;
-            --section-bg: #f0f5fa; /* New softer blue-gray for blocking */
+            --section-bg: #f0f5fa; 
             --text-dark: #333;
         }
 
@@ -74,7 +74,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Soft floating shadow */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06); 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -86,39 +86,41 @@
             color: var(--primary-blue);
         }
 
-        /* Hero Section */
+        /* Hero Section - Side-by-Side Layout */
         .hero {
-            /* Beautiful soft diagonal gradient */
             background: linear-gradient(135deg, #e0ecfb 0%, #f8f9fa 100%);
             padding: 80px 10%;
             display: flex;
-            flex-direction: column;
+            flex-direction: row; /* Puts items side-by-side */
             align-items: center;
-            text-align: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-image-container {
+            flex: 1; /* Takes up half the screen */
+            display: flex;
+            justify-content: center;
         }
 
         .tower-image {
             max-width: 100%; 
-            max-height: 400px; 
-            width: auto; 
-            height: auto;
-            display: block;
-            margin-bottom: 35px; 
+            max-height: 450px; 
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Gives the image some depth */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12); 
         }
 
         .hero-content {
-            max-width: 800px;
-            width: 100%;
+            flex: 1; /* Takes up the other half */
+            text-align: left; /* Left aligns the text for a cleaner look */
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text-dark); }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .hero h1 { font-size: 2.8rem; margin-top: 0; margin-bottom: 15px; color: var(--text-dark); line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #555; }
 
         /* Services Section */
         .services { 
-            background-color: var(--section-bg); /* Wraps the cards in color */
+            background-color: var(--section-bg); 
             padding: 80px 10%; 
             text-align: center; 
         }
@@ -134,9 +136,9 @@
             background: #fff;
             padding: 30px 25px;
             border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Deeper shadow */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--primary-blue); /* Colorful top accent */
+            border-top: 4px solid var(--primary-blue); 
         }
 
         .service-card:hover {
@@ -148,7 +150,7 @@
 
         /* Brands Section */
         .brands {
-            background-color: #fff; /* Crisp white to contrast the sections above and below */
+            background-color: #fff; 
             padding: 80px 10%;
             text-align: center;
         }
@@ -178,7 +180,7 @@
         }
         .brand-item img:hover {
             filter: grayscale(0%);
-            transform: scale(1.05); /* Logos slightly pop out when hovered */
+            transform: scale(1.05); 
         }
         .brand-item h4 {
             margin: 0;
@@ -220,12 +222,46 @@
             line-height: 1.6;
         }
 
+        /* Mobile Sticky Button - Hidden by default */
+        .mobile-sticky-btn {
+            display: none; 
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; gap: 15px; }
-            .hero h1 { font-size: 2rem; }
+            
+            /* Stacks the Hero section on mobile */
+            .hero { flex-direction: column; text-align: center; gap: 30px; }
+            .hero-content { text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            
             .brand-grid { gap: 30px; }
             .services, .brands, .about, .hero { padding-top: 50px; padding-bottom: 50px; }
+            
+            /* Adds padding to the bottom of the whole site so the sticky button doesn't cover footer text */
+            body { padding-bottom: 65px; }
+
+            /* Mobile Sticky Button - Becomes visible only on mobile */
+            .mobile-sticky-btn {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #28a745; /* A highly clickable bright green for emergency calls */
+                color: #fff;
+                text-align: center;
+                padding: 16px 0;
+                font-size: 1.2rem;
+                font-weight: bold;
+                text-decoration: none;
+                z-index: 2000; /* Ensures it stays above absolutely everything else */
+                box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+            }
+            .mobile-sticky-btn:hover {
+                background-color: #218838;
+            }
         }
     </style>
 </head>
@@ -237,7 +273,9 @@
     </header>
 
     <section class="hero">
-        <img src="tower.png" alt="Eiffel Tower of Paris, Texas with Cowboy Hat" class="tower-image">
+        <div class="hero-image-container">
+            <img src="tower.png" alt="Eiffel Tower of Paris, Texas with Cowboy Hat" class="tower-image">
+        </div>
         <div class="hero-content">
             <h1>Reliable Appliance Repair in Paris, TX</h1>
             <p>Fast, professional, and locally owned. We get your household running smoothly again with expert repairs you can trust.</p>
@@ -316,6 +354,8 @@
         
         <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">&copy; 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
     </footer>
+
+    <a href="tel:9032720840" class="mobile-sticky-btn">📞 Tap to Call: (903) 272-0840</a>
 
 </body>
 </html>

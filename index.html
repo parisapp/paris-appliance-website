@@ -82,19 +82,34 @@
             color: var(--primary-blue);
         }
 
-        /* Hero Section */
+        /* Hero Section - Optimized */
         .hero {
-            /* This adds the image as a background with a white frosted overlay */
-            background: linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.85)), url('tower.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 100px 10%;
+            background-color: var(--light-bg);
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .tower-image {
+            max-width: 100%; /* responsive width */
+            max-height: 400px; /* limits the vertical height to a reasonable size */
+            width: auto; /* maintains aspect ratio */
+            height: auto;
+            display: block;
+            margin-bottom: 30px; /* space below the image */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text-dark); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
 
         /* Services Section */
         .services { padding: 60px 10%; text-align: center; }
@@ -208,9 +223,12 @@
     </header>
 
     <section class="hero">
-        <h1>Reliable Appliance Repair in Paris, TX</h1>
-        <p>Fast, professional, and locally owned. We get your household running smoothly again with expert repairs you can trust.</p>
-        <a href="#contact" class="btn">Schedule a Repair Today</a>
+        <img src="tower.png" alt="Eiffel Tower of Paris, Texas with Cowboy Hat" class="tower-image">
+        <div class="hero-content">
+            <h1>Reliable Appliance Repair in Paris, TX</h1>
+            <p>Fast, professional, and locally owned. We get your household running smoothly again with expert repairs you can trust.</p>
+            <a href="#contact" class="btn">Schedule a Repair Today</a>
+        </div>
     </section>
 
     <section class="services">

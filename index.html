@@ -125,19 +125,24 @@
         .brand-grid {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Aligns items to the bottom baseline */
             gap: 40px;
             margin-top: 30px;
             flex-wrap: wrap;
         }
         .brand-item {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
             flex: 0 1 120px;
+            height: 110px; /* Fixed height for the entire block */
         }
         .brand-item img {
             max-width: 120px;
-            height: auto;
-            margin-bottom: 10px;
+            max-height: 65px; /* Ensures logos never overlap text */
+            object-fit: contain;
+            margin-bottom: 12px;
             filter: grayscale(20%);
             transition: filter 0.3s ease;
         }
@@ -148,6 +153,7 @@
             margin: 0;
             color: var(--text-dark);
             font-size: 1rem;
+            line-height: 1; /* Keeps text height totally uniform */
         }
 
         /* About Section */

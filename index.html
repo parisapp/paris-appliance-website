@@ -36,6 +36,7 @@
             --primary-blue: #0056b3;
             --dark-blue: #004494;
             --light-bg: #f8f9fa;
+            --section-bg: #f0f5fa; /* New softer blue-gray for blocking */
             --text-dark: #333;
         }
 
@@ -58,10 +59,13 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
-        .btn:hover { background-color: var(--dark-blue); }
+        .btn:hover { 
+            background-color: var(--dark-blue); 
+            transform: translateY(-2px);
+        }
 
         /* Header */
         header {
@@ -70,7 +74,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--primary-blue);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Soft floating shadow */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -82,9 +86,10 @@
             color: var(--primary-blue);
         }
 
-        /* Hero Section - Optimized */
+        /* Hero Section */
         .hero {
-            background-color: var(--light-bg);
+            /* Beautiful soft diagonal gradient */
+            background: linear-gradient(135deg, #e0ecfb 0%, #f8f9fa 100%);
             padding: 80px 10%;
             display: flex;
             flex-direction: column;
@@ -93,14 +98,14 @@
         }
 
         .tower-image {
-            max-width: 100%; /* responsive width */
-            max-height: 400px; /* limits the vertical height to a reasonable size */
-            width: auto; /* maintains aspect ratio */
+            max-width: 100%; 
+            max-height: 400px; 
+            width: auto; 
             height: auto;
             display: block;
-            margin-bottom: 30px; /* space below the image */
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 35px; 
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Gives the image some depth */
         }
 
         .hero-content {
@@ -112,41 +117,47 @@
         .hero p { font-size: 1.2rem; margin-bottom: 30px; }
 
         /* Services Section */
-        .services { padding: 60px 10%; text-align: center; }
+        .services { 
+            background-color: var(--section-bg); /* Wraps the cards in color */
+            padding: 80px 10%; 
+            text-align: center; 
+        }
+        
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-top: 40px;
         }
 
         .service-card {
             background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
+            padding: 30px 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Deeper shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-blue); /* Colorful top accent */
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
+
+        .service-card h3 { margin-top: 0; }
 
         /* Brands Section */
         .brands {
-            background-color: var(--light-bg);
-            padding: 60px 10%;
+            background-color: #fff; /* Crisp white to contrast the sections above and below */
+            padding: 80px 10%;
             text-align: center;
-            border-top: 1px solid #ddd;
         }
         .brand-grid {
             display: flex;
             justify-content: center;
             align-items: flex-end; 
             gap: 40px;
-            margin-top: 30px;
+            margin-top: 40px;
             flex-wrap: wrap;
         }
         .brand-item {
@@ -161,12 +172,13 @@
             max-width: 120px;
             max-height: 65px; 
             object-fit: contain;
-            margin-bottom: 12px;
-            filter: grayscale(20%);
-            transition: filter 0.3s ease;
+            margin-bottom: 15px;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease, transform 0.3s ease;
         }
         .brand-item img:hover {
             filter: grayscale(0%);
+            transform: scale(1.05); /* Logos slightly pop out when hovered */
         }
         .brand-item h4 {
             margin: 0;
@@ -179,39 +191,41 @@
         .about {
             background-color: var(--primary-blue);
             color: #fff;
-            padding: 60px 15%;
+            padding: 80px 15%;
             text-align: center;
         }
-        .about h2 { color: #fff; }
+        .about h2 { color: #fff; margin-top: 0; }
+        .about p { font-size: 1.1rem; line-height: 1.8; }
 
         /* Footer / Contact */
         footer {
             background-color: #222;
             color: #fff;
             text-align: center;
-            padding: 50px 10%;
+            padding: 60px 10% 40px 10%;
         }
 
-        footer h3 { color: #fff; margin-bottom: 20px; }
+        footer h3 { color: #fff; margin-top: 0; margin-bottom: 20px; }
         footer p { margin: 10px 0; }
-        footer a { color: #66b2ff; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        footer a { color: #66b2ff; text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: #fff; }
         
         .disclaimer {
             font-size: 0.85rem;
-            color: #aaa;
+            color: #888;
             max-width: 800px;
-            margin: 30px auto 10px auto;
+            margin: 40px auto 10px auto;
             border-top: 1px solid #444;
             padding-top: 20px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; gap: 10px; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
             .hero h1 { font-size: 2rem; }
-            .brand-grid { gap: 25px; }
+            .brand-grid { gap: 30px; }
+            .services, .brands, .about, .hero { padding-top: 50px; padding-bottom: 50px; }
         }
     </style>
 </head>

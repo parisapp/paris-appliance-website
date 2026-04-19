@@ -481,18 +481,51 @@
             font-size: 1.1rem;
         }
 
-        /* SMS Disclaimer Styling */
-        .sms-disclaimer {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 6px;
-            margin-bottom: 0;
-            line-height: 1.4;
+        /* SMS Consent Box */
+        .sms-consent-box {
+            background-color: #f8f9fa;
+            padding: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            margin-bottom: 20px;
         }
         
-        .sms-disclaimer a {
+        .sms-legal-text {
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .sms-legal-text a {
             color: var(--primary-blue);
             text-decoration: underline;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .radio-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        
+        .radio-group input[type="radio"] {
+            margin-top: 3px;
+            cursor: pointer;
         }
 
         /* Footer */
@@ -751,14 +784,13 @@
             <form action="https://formspree.io/f/mbdqyynl" method="POST">
                 
                 <div class="form-group">
-                    <label for="name">Your Name</label>
+                    <label for="name">Name</label>
                     <input type="text" id="name" name="Name" class="form-control" placeholder="John Doe" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="Phone" class="form-control" placeholder="(903) 555-0123" required>
-                    <p class="sms-disclaimer">By providing your phone number, you agree to receive text messages regarding your appointment. See our <a href="privacy.html" target="_blank">Privacy Policy</a>.</p>
                 </div>
                 
                 <div class="form-group">
@@ -776,8 +808,25 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="issue">Describe the Issue</label>
-                    <textarea id="issue" name="Issue_Description" class="form-control" rows="4" placeholder="E.g., The fridge is warm but the freezer is still cold..." required></textarea>
+                    <label for="issue">Message (Describe the Issue)</label>
+                    <textarea id="issue" name="Message" class="form-control" rows="4" placeholder="E.g., The fridge is warm but the freezer is still cold..." required></textarea>
+                </div>
+
+                <div class="sms-consent-box">
+                    <p class="sms-legal-text">Paris Appliance Repair would like your consent to send informational text message communications from +19032720840 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us.</p>
+                    
+                    <p class="sms-legal-text">Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information. We do not share your mobile opt-in information with anyone. See our <a href="privacy.html" target="_blank">privacy policy and messaging terms and conditions</a> for more information.</p>
+                    
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="SMS_Consent" value="Yes, I consent" required>
+                            Yes, I consent to receive informational messages from Paris Appliance Repair
+                        </label>
+                        <label>
+                            <input type="radio" name="SMS_Consent" value="No, I do not consent" required>
+                            No, I do not want to receive any text messages from Paris Appliance Repair
+                        </label>
+                    </div>
                 </div>
                 
                 <button type="submit" class="btn form-submit">Send Request</button>

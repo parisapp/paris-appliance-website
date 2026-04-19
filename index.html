@@ -481,6 +481,35 @@
             font-size: 1.1rem;
         }
 
+        /* Dynamic Pricing Alert Box */
+        .pricing-alert {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-blue);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: none; 
+            animation: fadeIn 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        
+        .pricing-alert.success {
+            border-left-color: #28a745;
+            background-color: #f0fdf4;
+        }
+        
+        .pricing-alert.error {
+            border-left-color: #dc3545;
+            background-color: #fff1f0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* SMS Consent Box */
         .sms-consent-box {
             background-color: #f8f9fa;
@@ -779,6 +808,7 @@
                     <li><strong>Monogram:</strong> <a href="tel:18004441845">1-800-444-1845</a></li>
                     <li><strong>Speed Queen:</strong> <a href="tel:18005525475">1-800-552-5475</a></li>
                 </ul>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 15px; margin-bottom: 0;"><em>*Please note: In-warranty service areas vary by manufacturer.</em></p>
             </div>
 
             <form action="https://formspree.io/f/mbdqyynl" method="POST">
@@ -792,6 +822,13 @@
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="Phone" class="form-control" placeholder="(903) 555-0123" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="zipcode">Service Zip Code</label>
+                    <input type="text" id="zipcode" name="Zip_Code" class="form-control" placeholder="Enter your 5-digit zip code" maxlength="5" pattern="\d{5}" required>
+                </div>
+
+                <div id="pricing-result" class="pricing-alert"></div>
                 
                 <div class="form-group">
                     <label for="appliance">Appliance Type</label>
@@ -852,8 +889,10 @@
             <div class="footer-col">
                 <h3>Service Areas</h3>
                 <p class="service-areas">
-                    <strong>Texas:</strong> Arthur City, Bagwell, Bogata, Bonham, Clarksville, Commerce, Cooper, Deport, Detroit, Dodd City, Honey Grove, Mt Vernon, Paris, Scroggins, Sulphur Springs, Sumner, Winnsboro.<br><br>
-                    <strong>Oklahoma:</strong> Fort Towson, Hugo.
+                    <strong style="color: #ddd;">Primary Local Area (All Brands):</strong><br>
+                    Arthur City, Blossom, Brookston, Chicota, Deport, Detroit, Paris, Pattonville, Petty, Powderly, Roxton, Sumner.<br><br>
+                    <strong style="color: #ddd;">Extended Area (Whirlpool Family & Out-of-Warranty):</strong><br>
+                    Annona, Avery, Bagwell, Ben Franklin, Bogata, Bonham, Brashear, Campbell, Clarksville, Commerce, Como, Cooper, Cumby, Cunningham, Dike, Dodd City, Enloe, Fort Towson (OK), Garvin (OK), Grant (OK), Honey Grove, Hugo (OK), Klondike, Ladonia, Lake Creek, Mount Vernon, Pecan Gap, Pickton, Saltillo, Sawyer (OK), Scroggins, Sulphur Bluff, Sulphur Springs, Talco, Valliant (OK), Windom, Winnsboro, Wolfe City.
                 </p>
             </div>
         </div>
@@ -867,5 +906,50 @@
 
     <a href="tel:9032720840" class="mobile-sticky-btn">Tap to Call: (903) 272-0840</a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const zipInput = document.getElementById('zipcode');
+            const pricingResult = document.getElementById('pricing-result');
+
+            // Data pulled directly from Pricing_Tiers.csv
+            const pricingData = {
+                "74735": "$150", "74736": "$150", "74738": "$135", "74743": "$135",
+                "74756": "$135", "74764": "$150", "75411": "$100", "75412": "$135",
+                "75415": "$135", "75416": "$100", "75417": "$135", "75418": "$150",
+                "75420": "$150", "75421": "$100", "75422": "$150", "75425": "$100",
+                "75426": "$135", "75428": "$150", "75431": "$175", "75432": "$135",
+                "75433": "$150", "75434": "$135", "75435": "$100", "75436": "$100",
+                "75437": "$150", "75438": "$150", "75441": "$135", "75446": "$135",
+                "75448": "$150", "75449": "$150", "75450": "$135", "75457": "$150",
+                "75460": "$100", "75462": "$100", "75468": "$100", "75469": "$135",
+                "75470": "$100", "75471": "$175", "75473": "$100", "75477": "$100",
+                "75478": "$150", "75480": "$175", "75481": "$150", "75482": "$150",
+                "75486": "$100", "75487": "$150", "75492": "$150", "75494": "$175",
+                "75496": "$150", "75550": "$150", "75554": "$150"
+            };
+
+            zipInput.addEventListener('input', function() {
+                // Strip out any non-numbers (prevents customers typing letters)
+                let zip = this.value.replace(/\D/g, '');
+                this.value = zip; 
+                
+                // Only trigger the pricing check when exactly 5 digits are entered
+                if (zip.length === 5) {
+                    if (pricingData[zip]) {
+                        pricingResult.className = 'pricing-alert success';
+                        pricingResult.innerHTML = `<strong style="color: #28a745;">Service Available!</strong> Your flat-rate diagnostic/trip charge is <strong>${pricingData[zip]}</strong>.`;
+                        pricingResult.style.display = 'block';
+                    } else {
+                        pricingResult.className = 'pricing-alert error';
+                        pricingResult.innerHTML = `<strong style="color: #dc3545;">Out of Standard Area</strong> We do not have a standard flat-rate for this zip code. Please call us directly at (903) 272-0840 to confirm service availability.`;
+                        pricingResult.style.display = 'block';
+                    }
+                } else {
+                    // Hide the box if they delete a number or haven't finished typing
+                    pricingResult.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -854,6 +854,8 @@
 
             <form action="https://formspree.io/f/mbdqyynl" method="POST">
                 
+                <input type="hidden" name="_subject" id="dynamic-subject" value="New Service Request">
+
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="Name" class="form-control" placeholder="John Doe" required>
@@ -993,12 +995,25 @@
                 }
             });
 
-            // New Phone Number Auto-Formatter
+            // Phone Number Auto-Formatter
             const phoneInput = document.getElementById('phone');
             phoneInput.addEventListener('input', function (e) {
                 var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
                 e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
             });
+
+            // ADDED: Dynamic Subject Line Generator
+            const contactForm = document.querySelector('form[action="https://formspree.io/f/mbdqyynl"]');
+            const dynamicSubject = document.getElementById('dynamic-subject');
+            const nameField = document.getElementById('name');
+
+            if (contactForm && dynamicSubject && nameField) {
+                contactForm.addEventListener('submit', function() {
+                    const clientName = nameField.value.trim() || 'Client';
+                    const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    dynamicSubject.value = `New Lead: ${clientName} - ${time}`;
+                });
+            }
         });
     </script>
 </body>

@@ -96,7 +96,20 @@
             box-shadow: 0 6px 20px rgba(242, 106, 33, 0.4);
         }
 
-        /* Header & Navigation */
+        /* NEW: Top Alert Banner */
+        .top-alert-banner {
+            background-color: var(--dark-blue);
+            color: #fff;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .top-alert-banner strong {
+            color: var(--accent-orange);
+            letter-spacing: 0.5px;
+        }
+
         header {
             background-color: #fff;
             padding: 15px 5%;
@@ -140,7 +153,6 @@
             font-size: 0.9rem;
         }
 
-        /* Cinematic Hero Section */
         .hero {
             background-color: var(--dark-blue);
             background-image: linear-gradient(rgba(0, 86, 179, 0.6), rgba(0, 56, 117, 0.8)), url('https://parisappliancerepair.com/servicevan.jpg');
@@ -190,7 +202,6 @@
         .hero h1 { font-size: 3rem; margin-top: 0; margin-bottom: 20px; color: #fff; line-height: 1.15; }
         .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
-        /* Trust Checkmarks */
         .trust-marks {
             display: flex;
             flex-wrap: wrap;
@@ -208,7 +219,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* Services Section */
         .services { 
             background-color: var(--section-bg); 
             padding: 90px 10%; 
@@ -250,7 +260,6 @@
         .service-card h3 { margin-top: 0; font-size: 1.3rem; }
         .service-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 0; }
 
-        /* Reviews Section */
         .reviews {
             background-color: #fff;
             padding: 90px 10%;
@@ -283,7 +292,6 @@
         .review-text { font-style: italic; color: var(--text-dark); margin-bottom: 20px; font-size: 1rem; line-height: 1.6; }
         .review-author { margin: 0; font-weight: 700; color: var(--primary-blue); font-size: 0.95rem; }
 
-        /* CTA Review Area */
         .review-cta {
             margin-top: 60px;
             padding-top: 50px;
@@ -297,7 +305,6 @@
             margin-top: 0;
         }
 
-        /* Brands Section */
         .brands {
             background-color: var(--section-bg); 
             padding: 80px 10%;
@@ -349,7 +356,6 @@
             font-weight: 600;
         }
 
-        /* CSS Logo for Hotpoint */
         .hotpoint-css-logo {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
@@ -372,7 +378,6 @@
             transform: scale(1.08); 
         }
 
-        /* About Section */
         .about {
             background-color: var(--primary-blue);
             background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
@@ -384,7 +389,6 @@
         .about h2 { color: #fff; margin-top: 0; font-size: 2.2rem; }
         .about p { font-size: 1.15rem; line-height: 1.8; max-width: 900px; margin: 0 auto; color: #eef5fc; }
 
-        /* Contact Form Section */
         .contact-section {
             background-color: #fff;
             padding: 90px 10%;
@@ -405,7 +409,18 @@
             text-align: left;
         }
 
-        /* Warranty Notice Box */
+        /* NEW: Scheduling Process Note */
+        .scheduling-note {
+            background-color: #eef5fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-blue);
+            text-align: left;
+        }
+        .scheduling-note h4 { margin-top: 0; margin-bottom: 10px; color: var(--dark-blue); }
+        .scheduling-note p { margin: 0; font-size: 0.95rem; color: var(--text-dark); }
+
         .warranty-notice {
             background-color: #fff8eb;
             border-left: 4px solid var(--accent-orange);
@@ -481,7 +496,6 @@
             font-size: 1.1rem;
         }
 
-        /* Dynamic Pricing Alert Box */
         .pricing-alert {
             background-color: #f8f9fa;
             border-left: 4px solid var(--primary-blue);
@@ -510,7 +524,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* SMS Consent Box */
         .sms-consent-box {
             background-color: #f8f9fa;
             padding: 18px;
@@ -557,7 +570,32 @@
             cursor: pointer;
         }
 
-        /* Footer */
+        /* NEW: Cancellation Checkbox Group */
+        .checkbox-group {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            background-color: #fffbe6;
+            padding: 12px;
+            border: 1px solid #ffe58f;
+            border-radius: 6px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 5px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .checkbox-group label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            cursor: pointer;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
         footer {
             background-color: #1a1a1a;
             color: #fff;
@@ -590,10 +628,8 @@
             line-height: 1.6;
         }
 
-        /* Mobile Sticky Button */
         .mobile-sticky-btn { display: none; }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .hero { flex-direction: column; text-align: center; padding-top: 60px; }
             .hero-content { text-align: center; }
@@ -634,6 +670,10 @@
     </style>
 </head>
 <body>
+
+    <div class="top-alert-banner">
+        <strong>⚠️ SERVICE UPDATE:</strong> Due to high local demand, we are currently experiencing extended wait times for new appointments. We greatly appreciate your patience!
+    </div>
 
     <header>
         <a href="#" class="logo">Paris Appliance Repair LLC</a>
@@ -737,47 +777,47 @@
         
         <div class="brand-grid">
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/whirlpool.png" alt="Authorized Whirlpool Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/whirlpool.png" alt="Whirlpool">
                 <h4>Whirlpool</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/maytag.png" alt="Authorized Maytag Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/maytag.png" alt="Maytag">
                 <h4>Maytag</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/kitchenaid.png" alt="Authorized KitchenAid Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/kitchenaid.png" alt="KitchenAid">
                 <h4>KitchenAid</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/jennair.png" alt="Authorized JennAir Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/jennair.png" alt="JennAir">
                 <h4>JennAir</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/amana.png" alt="Authorized Amana Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/amana.png" alt="Amana">
                 <h4>Amana</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/speedqueen.png" alt="Authorized Speed Queen Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/speedqueen.png" alt="Speed Queen">
                 <h4>Speed Queen</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/ge.png" alt="Authorized GE Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/ge.png" alt="GE">
                 <h4>GE</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/geprofile.png" alt="Authorized GE Profile Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/geprofile.png" alt="GE Profile">
                 <h4>GE Profile</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/cafe.png" alt="Authorized Café Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/cafe.png" alt="Café">
                 <h4>Café</h4>
             </div>
             <div class="brand-item">
-                <img src="https://parisappliancerepair.com/monogram.png" alt="Authorized Monogram Repair in Paris, TX">
+                <img src="https://parisappliancerepair.com/monogram.png" alt="Monogram">
                 <h4>Monogram</h4>
             </div>
             <div class="brand-item">
-                <div class="hotpoint-css-logo" aria-label="Authorized Hotpoint Repair in Paris, TX">HOTPOINT</div>
+                <div class="hotpoint-css-logo">HOTPOINT</div>
                 <h4>Hotpoint</h4>
             </div>
         </div>
@@ -790,10 +830,14 @@
 
     <section id="contact" class="contact-section">
         <h2>Request Service</h2>
-        <p>Fill out the form below or call us directly at <strong>(903) 272-0840</strong>.</p>
         
         <div class="form-container">
             
+            <div class="scheduling-note">
+                <h4>Our Scheduling Process</h4>
+                <p>As a high-demand, factory-authorized servicer, we prioritize quality over speed. To ensure every repair is performed to the highest standard, we coordinate our schedule by geographic region. We appreciate your patience.</p>
+            </div>
+
             <div class="warranty-notice">
                 <strong>⚠️ Note for In-Warranty Repairs:</strong> 
                 If your appliance is currently under the manufacturer's warranty, please contact the manufacturer directly to initiate the service claim. They will then dispatch us to your home! 
@@ -865,6 +909,11 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="cancel-list" name="Cancellation_List" value="Yes">
+                    <label for="cancel-list">Add me to the Cancellation List if an earlier spot opens in my area due to a schedule change.</label>
+                </div>
                 
                 <button type="submit" class="btn form-submit">Send Request</button>
             </form>
@@ -911,29 +960,26 @@
             const zipInput = document.getElementById('zipcode');
             const pricingResult = document.getElementById('pricing-result');
 
-            // Data pulled directly from Pricing_Tiers.csv
             const pricingData = {
                 "74735": "$150", "74736": "$150", "74738": "$135", "74743": "$135",
-                "74756": "$135", "74764": "$150", "75411": "$100", "75412": "$135",
-                "75415": "$135", "75416": "$100", "75417": "$135", "75418": "$150",
-                "75420": "$150", "75421": "$100", "75422": "$150", "75425": "$100",
-                "75426": "$135", "75428": "$150", "75431": "$175", "75432": "$135",
-                "75433": "$150", "75434": "$135", "75435": "$100", "75436": "$100",
-                "75437": "$150", "75438": "$150", "75441": "$135", "75446": "$135",
-                "75448": "$150", "75449": "$150", "75450": "$135", "75457": "$150",
-                "75460": "$100", "75462": "$100", "75468": "$100", "75469": "$135",
-                "75470": "$100", "75471": "$175", "75473": "$100", "75477": "$100",
-                "75478": "$150", "75480": "$175", "75481": "$150", "75482": "$150",
-                "75486": "$100", "75487": "$150", "75492": "$150", "75494": "$175",
-                "75496": "$150", "75550": "$150", "75554": "$150"
+                "74756": "$135", "74764": "$150", "75411": "$100", "75416": "$100",
+                "75421": "$100", "75425": "$100", "75435": "$100", "75436": "$100",
+                "75460": "$100", "75462": "$100", "75468": "$100", "75470": "$100",
+                "75473": "$100", "75477": "$100", "75486": "$100", "75412": "$135",
+                "75415": "$135", "75417": "$135", "75426": "$135", "75432": "$135",
+                "75434": "$135", "75441": "$135", "75446": "$135", "75450": "$135",
+                "75469": "$135", "75418": "$150", "75420": "$150", "75422": "$150",
+                "75428": "$150", "75433": "$150", "75437": "$150", "75438": "$150",
+                "75448": "$150", "75449": "$150", "75457": "$150", "75478": "$150",
+                "75481": "$150", "75482": "$150", "75487": "$150", "75492": "$150",
+                "75496": "$150", "75550": "$150", "75554": "$150", "75431": "$175",
+                "75471": "$175", "75480": "$175", "75494": "$175"
             };
 
             zipInput.addEventListener('input', function() {
-                // Strip out any non-numbers (prevents customers typing letters)
                 let zip = this.value.replace(/\D/g, '');
                 this.value = zip; 
                 
-                // Only trigger the pricing check when exactly 5 digits are entered
                 if (zip.length === 5) {
                     if (pricingData[zip]) {
                         pricingResult.className = 'pricing-alert success';
@@ -945,7 +991,6 @@
                         pricingResult.style.display = 'block';
                     }
                 } else {
-                    // Hide the box if they delete a number or haven't finished typing
                     pricingResult.style.display = 'none';
                 }
             });

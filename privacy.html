@@ -39,6 +39,21 @@
             color: var(--primary-blue); 
         }
 
+        /* Top Alert Banner */
+        .top-alert-banner {
+            background-color: var(--dark-blue);
+            color: #fff;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .top-alert-banner strong {
+            color: var(--accent-orange);
+            letter-spacing: 0.5px;
+        }
+
         /* Header & Navigation */
         header {
             background-color: #fff;
@@ -110,18 +125,53 @@
         .highlight-box p { margin-bottom: 0; }
 
         /* Footer */
-        footer { background-color: #1a1a1a; color: #fff; padding: 40px 10%; text-align: center; }
-        footer p { color: #bbb; font-size: 0.9rem; margin: 5px 0; }
-        footer a { color: var(--accent-orange); text-decoration: none; }
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 70px 10% 40px 10%;
+            text-align: left; 
+            margin-top: 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 { color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.3rem; }
+        .footer-col p { margin: 10px 0; color: #bbb; font-size: 0.95rem; }
+        .footer-col a { color: var(--accent-orange); text-decoration: none; transition: color 0.3s ease; font-weight: 600; }
+        .footer-col a:hover { color: #fff; }
+        
+        .service-areas { font-size: 0.85rem !important; line-height: 1.8; color: #999 !important; }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            max-width: 900px;
+            margin: 40px auto 10px auto;
+            border-top: 1px solid #333;
+            padding-top: 25px;
+            line-height: 1.6;
+        }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
+            .main-nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .legal-container { padding: 30px 20px; margin: 30px 5%; }
             .legal-container h1 { font-size: 1.8rem; }
+            footer { text-align: center; }
         }
     </style>
 </head>
 <body>
+
+    <div class="top-alert-banner">
+        <strong>⚠️ SERVICE UPDATE:</strong> Due to high local demand, we are currently experiencing extended wait times for new appointments. We greatly appreciate your patience!
+    </div>
 
     <header>
         <a href="index.html" class="logo">Paris Appliance Repair LLC</a>
@@ -180,8 +230,36 @@
     </div>
 
     <footer>
-        <p>© 2026 Paris Appliance Repair LLC. All Rights Reserved.</p>
-        <p>Proudly serving Northeast Texas and Southeast Oklahoma.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> <a href="tel:9032720840">(903) 272-0840</a></p>
+                <p><strong>Email:</strong> <a href="mailto:parisappliancerepair@gmail.com">parisappliancerepair@gmail.com</a></p>
+                <p style="margin-top: 15px;"><em>Proudly serving Northeast Texas and Southeast Oklahoma.</em></p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Business Hours</h3>
+                <p><strong>Monday - Friday:</strong><br>8:00 AM – 12:00 PM<br>1:00 PM – 5:00 PM</p>
+                <p style="margin-top: 10px;"><strong>Saturday & Sunday:</strong><br>Closed</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Service Areas</h3>
+                <p class="service-areas">
+                    <strong style="color: #ddd;">Primary Local Area (All Brands):</strong><br>
+                    Arthur City, Blossom, Brookston, Chicota, Deport, Detroit, Paris, Pattonville, Petty, Powderly, Roxton, Sumner.<br><br>
+                    <strong style="color: #ddd;">Extended Area (Whirlpool Family & Out-of-Warranty):</strong><br>
+                    Annona, Avery, Bagwell, Ben Franklin, Bogata, Bonham, Brashear, Campbell, Clarksville, Commerce, Como, Cooper, Cumby, Cunningham, Dike, Dodd City, Enloe, Fort Towson (OK), Garvin (OK), Grant (OK), Honey Grove, Hugo (OK), Klondike, Ladonia, Lake Creek, Mount Vernon, Pecan Gap, Pickton, Saltillo, Sawyer (OK), Scroggins, Sulphur Bluff, Sulphur Springs, Talco, Valliant (OK), Windom, Winnsboro, Wolfe City.
+                </p>
+            </div>
+        </div>
+        
+        <p class="disclaimer">
+            <em>Whirlpool, Maytag, KitchenAid, JennAir, Amana, Speed Queen, GE, Monogram, Café, GE Profile, and Hotpoint are registered trademarks of their respective owners. Paris Appliance Repair LLC is an independent service provider authorized to perform repairs on these brands. Any other trademarks or brand names mentioned are the property of their respective owners.</em>
+        </p>
+        
+        <p style="font-size: 0.9rem; color: #555; margin-top: 15px; text-align: center;">© 2026 Paris Appliance Repair LLC. All Rights Reserved. | <a href="privacy.html" style="color: #888; text-decoration: underline;">Privacy Policy</a></p>
     </footer>
 
 </body>

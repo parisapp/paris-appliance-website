@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paris Appliance Repair LLC | Paris, TX | Authorized Whirlpool & GE Servicer</title>
+    <title>Paris Appliance Repair LLC | Authorized Whirlpool & GE Servicer</title>
     <meta name="description" content="Professional, flat-rate appliance repair in Paris, TX. Authorized servicer for Whirlpool, Maytag, KitchenAid, Amana, Speed Queen, and GE brands.">
     
     <link rel="canonical" href="https://parisappliancerepair.com/" />
@@ -398,7 +398,7 @@
         .contact-section > p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 40px; }
 
         .form-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             background: #fdfdfd;
             padding: 40px;
@@ -460,51 +460,17 @@
             color: var(--accent-orange);
         }
 
-        .form-group { margin-bottom: 20px; }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-blue);
-            font-size: 0.9rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-blue);
-            outline: none;
-        }
-
-        textarea.form-control { resize: vertical; }
-
-        .form-submit {
-            width: 100%;
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
-
         .pricing-alert {
             background-color: #f8f9fa;
             border-left: 4px solid var(--primary-blue);
             padding: 15px 20px;
-            margin-bottom: 20px;
             border-radius: 0 6px 6px 0;
             font-size: 0.95rem;
             color: var(--text-dark);
             display: none; 
             animation: fadeIn 0.3s ease;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            margin-top: 10px;
         }
         
         .pricing-alert.success {
@@ -522,76 +488,93 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* COMPACT FORM GRID STYLES */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .full-width { grid-column: 1 / -1; }
+        
+        .form-group { margin-bottom: 0; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark-blue);
+            font-size: 0.85rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+
+        textarea.form-control { resize: vertical; }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 5px;
+            font-size: 1.1rem;
+            padding: 12px;
+        }
+
+        /* Compact SMS Box */
         .sms-consent-box {
             background-color: #f8f9fa;
-            padding: 18px;
+            padding: 12px;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
-            margin-bottom: 20px;
         }
         
         .sms-legal-text {
-            font-size: 0.8rem;
-            color: #555;
-            line-height: 1.5;
+            font-size: 0.75rem;
+            color: #666;
+            line-height: 1.4;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
-        .sms-legal-text a {
-            color: var(--primary-blue);
-            text-decoration: underline;
-        }
+        .sms-legal-text a { color: var(--primary-blue); text-decoration: underline; }
         
         .radio-group {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 15px;
-            padding-top: 15px;
+            gap: 8px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px solid #ddd;
         }
         
-        .radio-group label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-dark);
+        .radio-group label { font-size: 0.8rem; font-weight: 600; color: var(--text-dark); display: flex; align-items: flex-start; gap: 8px; cursor: pointer; margin-bottom: 0; }
+        .radio-group input[type="radio"] { margin-top: 2px; cursor: pointer; }
+
+        .checkbox-group {
             display: flex;
             align-items: flex-start;
             gap: 10px;
             cursor: pointer;
-            margin-bottom: 0;
-        }
-        
-        .radio-group input[type="radio"] {
-            margin-top: 3px;
-            cursor: pointer;
-        }
-
-        .checkbox-group {
-            margin-bottom: 25px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            cursor: pointer;
             background-color: #fffbe6;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #ffe58f;
             border-radius: 6px;
+            margin-top: 10px;
         }
-        .checkbox-group input[type="checkbox"] {
-            margin-top: 5px;
-            transform: scale(1.2);
-            cursor: pointer;
-        }
-        .checkbox-group label {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--dark-blue);
-            cursor: pointer;
-            margin-bottom: 0;
-            line-height: 1.4;
-        }
+        .checkbox-group input[type="checkbox"] { margin-top: 3px; transform: scale(1.1); cursor: pointer; }
+        .checkbox-group label { font-size: 0.85rem; font-weight: 700; color: var(--dark-blue); cursor: pointer; margin-bottom: 0; line-height: 1.4; }
 
         footer {
             background-color: #1a1a1a;
@@ -644,6 +627,9 @@
             footer { text-align: center; padding-top: 50px; }
             .footer-grid { gap: 40px; }
             .form-container { padding: 25px 15px; }
+
+            /* Make grid elements stack on mobile */
+            .form-grid { grid-template-columns: 1fr; gap: 15px; }
 
             .mobile-sticky-btn {
                 display: block;
@@ -852,69 +838,125 @@
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 15px; margin-bottom: 0;"><em>*Please note: In-warranty service areas vary by manufacturer.</em></p>
             </div>
 
-            <form action="https://formspree.io/f/mbdqyynl" method="POST">
+            <form name="Service-Request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
                 
+                <input type="hidden" name="form-name" value="Service-Request" />
+                <p style="display:none;"><label>Don’t fill this out if you're human: <input name="bot-field" /></label></p>
                 <input type="hidden" name="_subject" id="dynamic-subject" value="New Service Request">
 
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="Name" class="form-control" placeholder="John Doe" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="Phone" class="form-control" placeholder="(903) 555-0123" pattern="\(\d{3}\) \d{3}-\d{4}" maxlength="14" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="zipcode">Service Zip Code</label>
-                    <input type="text" id="zipcode" name="Zip_Code" class="form-control" placeholder="Enter your 5-digit zip code" maxlength="5" pattern="\d{5}" required>
-                </div>
-
-                <div id="pricing-result" class="pricing-alert"></div>
-                
-                <div class="form-group">
-                    <label for="appliance">Appliance Type</label>
-                    <select id="appliance" name="Appliance_Type" class="form-control" required>
-                        <option value="" disabled selected>Select an appliance...</option>
-                        <option value="Refrigerator/Ice_Maker">Refrigerator / Undercounter Ice Maker</option>
-                        <option value="Washer">Washer</option>
-                        <option value="Dryer">Dryer</option>
-                        <option value="Oven/Stove/Cooktop">Oven / Stove / Cooktop</option>
-                        <option value="Dishwasher">Dishwasher</option>
-                        <option value="Microwave">Microwave</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="issue">Message (Describe the Issue)</label>
-                    <textarea id="issue" name="Message" class="form-control" rows="4" placeholder="E.g., The fridge is warm but the freezer is still cold..." required></textarea>
-                </div>
-
-                <div class="sms-consent-box">
-                    <p class="sms-legal-text">Paris Appliance Repair would like your consent to send informational text message communications from +19032720840 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us.</p>
+                <div class="form-grid">
                     
-                    <p class="sms-legal-text">Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information. We do not share your mobile opt-in information with anyone. See our <a href="privacy.html" target="_blank">privacy policy and messaging terms and conditions</a> for more information.</p>
-                    
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="SMS_Consent" value="Yes, I consent" required>
-                            Yes, I consent to receive informational messages from Paris Appliance Repair
-                        </label>
-                        <label>
-                            <input type="radio" name="SMS_Consent" value="No, I do not consent" required>
-                            No, I do not want to receive any text messages from Paris Appliance Repair
-                        </label>
+                    <div class="form-group full-width">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="Name" class="form-control" placeholder="John Doe" required>
                     </div>
-                </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="cancel-list" name="Cancellation_List" value="Yes">
-                    <label for="cancel-list">Add me to the Cancellation List if an earlier spot opens in my area due to a schedule change.</label>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="Phone" class="form-control" placeholder="(903) 555-0123" pattern="\(\d{3}\) \d{3}-\d{4}" maxlength="14" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span style="font-weight: 400; color: #666;">(Optional)</span></label>
+                        <input type="email" id="email" name="Email" class="form-control" placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">Street Address</label>
+                        <input type="text" id="address" name="Address" class="form-control" placeholder="123 Main St" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipcode">Service Zip Code</label>
+                        <input type="text" id="zipcode" name="Zip_Code" class="form-control" placeholder="5-digit zip" maxlength="5" pattern="\d{5}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-pref">Preferred Contact Method</label>
+                        <select id="contact-pref" name="Contact_Preference" class="form-control" required>
+                            <option value="" disabled selected>How should we reach you?</option>
+                            <option value="Phone Call">Phone Call</option>
+                            <option value="Email">Email</option>
+                        </select>
+                    </div>
+
+                    <div class="full-width" id="pricing-result" class="pricing-alert"></div>
+                    
+                    <div class="form-group">
+                        <label for="brand">Appliance Brand</label>
+                        <select id="brand" name="Brand" class="form-control" required>
+                            <option value="" disabled selected>Select the brand...</option>
+                            <option value="Whirlpool">Whirlpool</option>
+                            <option value="Maytag">Maytag</option>
+                            <option value="KitchenAid">KitchenAid</option>
+                            <option value="Amana">Amana</option>
+                            <option value="Speed Queen">Speed Queen</option>
+                            <option value="GE">GE / Profile / Café</option>
+                            <option value="Hotpoint">Hotpoint</option>
+                            <option value="Other">Other / Not Sure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appliance">Appliance Type</label>
+                        <select id="appliance" name="Appliance_Type" class="form-control" required>
+                            <option value="" disabled selected>Select an appliance...</option>
+                            <option value="Refrigerator/Ice_Maker">Refrigerator / Undercounter Ice Maker</option>
+                            <option value="Washer">Washer</option>
+                            <option value="Dryer">Dryer</option>
+                            <option value="Oven/Stove/Cooktop">Oven / Stove / Cooktop</option>
+                            <option value="Dishwasher">Dishwasher</option>
+                            <option value="Microwave">Microwave</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="model">Model Number <span style="font-weight: 400; color: #666;">(Optional)</span></label>
+                        <input type="text" id="model" name="Model_Number" class="form-control" placeholder="e.g., WRF535SWHZ00">
+                    </div>
+
+                    <div class="form-group full-width" style="background-color: #f8f9fa; padding: 12px; border-radius: 6px; border: 1px dashed #ccc;">
+                        <label for="photo" style="margin-bottom: 2px;">Take or Upload a Photo of the Data Tag <span style="font-weight: 400; color: #666;">(Optional)</span></label>
+                        <p style="font-size: 0.75rem; color: #666; margin-top: 0; margin-bottom: 8px;">Tap below to open your camera or select an existing picture of the sticker showing your model and serial number.</p>
+                        <input type="file" id="photo" name="Data_Tag_Photo" accept="image/*" class="form-control" style="border: none; padding: 0; background: transparent;">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="issue">Message (Describe the Issue)</label>
+                        <textarea id="issue" name="Message" class="form-control" rows="3" placeholder="E.g., The fridge is warm but the freezer is still cold..." required></textarea>
+                    </div>
+
+                    <div class="sms-consent-box full-width">
+                        
+                        <div style="background-color: #fff8eb; border-left: 3px solid var(--accent-orange); padding: 10px; margin-bottom: 15px; border-radius: 4px; font-size: 0.85rem; color: var(--text-dark);">
+                            <strong>📱 Temporary Texting Notice:</strong> We can currently <em>receive</em> incoming text messages and photos, but we are temporarily unable to send outgoing text replies while our mobile carrier updates our system. <strong>We will gladly respond to your request via phone call or email!</strong>
+                        </div>
+                        
+                        <p class="sms-legal-text">Paris Appliance Repair would like your consent to send informational text message communications from +19032720840 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us.</p>
+                        
+                        <p class="sms-legal-text">Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information. We do not share your mobile opt-in information with anyone. See our <a href="privacy.html" target="_blank">privacy policy and messaging terms and conditions</a> for more information.</p>
+                        
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="SMS_Consent" value="Yes, I consent" required>
+                                Yes, I consent to receive informational messages from Paris Appliance Repair
+                            </label>
+                            <label>
+                                <input type="radio" name="SMS_Consent" value="No, I do not consent" required>
+                                No, I do not want to receive any text messages from Paris Appliance Repair
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group full-width">
+                        <input type="checkbox" id="cancel-list" name="Cancellation_List" value="Yes">
+                        <label for="cancel-list">Add me to the Cancellation List if an earlier spot opens in my area due to a schedule change.</label>
+                    </div>
+                    
+                    <button type="submit" class="btn form-submit full-width">Send Request</button>
+                    
                 </div>
-                
-                <button type="submit" class="btn form-submit">Send Request</button>
             </form>
         </div>
     </section>
@@ -982,11 +1024,11 @@
                 
                 if (zip.length === 5) {
                     if (pricingData[zip]) {
-                        pricingResult.className = 'pricing-alert success';
+                        pricingResult.className = 'pricing-alert success full-width';
                         pricingResult.innerHTML = `<strong style="color: #28a745;">Service Available!</strong> Your flat-rate diagnostic/trip charge is <strong>${pricingData[zip]}</strong>.`;
                         pricingResult.style.display = 'block';
                     } else {
-                        pricingResult.className = 'pricing-alert error';
+                        pricingResult.className = 'pricing-alert error full-width';
                         pricingResult.innerHTML = `<strong style="color: #dc3545;">Out of Standard Area</strong> We do not have a standard flat-rate for this zip code. Please call us directly at (903) 272-0840 to confirm service availability.`;
                         pricingResult.style.display = 'block';
                     }
@@ -1002,8 +1044,8 @@
                 e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
             });
 
-            // ADDED: Dynamic Subject Line Generator
-            const contactForm = document.querySelector('form[action="https://formspree.io/f/mbdqyynl"]');
+            // Dynamic Subject Line Generator
+            const contactForm = document.querySelector('form[name="Service-Request"]');
             const dynamicSubject = document.getElementById('dynamic-subject');
             const nameField = document.getElementById('name');
 

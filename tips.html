@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQ3G16CQE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YEQ3G16CQE');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayne's Workbench: Pro Appliance Tips | Paris Appliance Repair</title>
+    <meta name="description" content="Field-tested appliance tips, tricks, and troubleshooting from Paris Appliance Repair LLC. Save time and money before you book a service call.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;600;400i&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles (Matching your live site) */
+        :root {
+            --primary-blue: #0056b3;
+            --dark-blue: #003d82;
+            --accent-orange: #f26a21; 
+            --accent-hover: #d95a1a;
+            --light-bg: #f8f9fa;
+            --section-bg: #f0f5fa; 
+            --text-dark: #2b2b2b;
+            --text-light: #555555;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif; 
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 { 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--primary-blue); 
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-orange); 
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(242, 106, 33, 0.3); 
+            border: none;
+        }
+
+        .btn:hover { 
+            background-color: var(--accent-hover); 
+            transform: translateY(-2px);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .main-nav { display: flex; gap: 25px; }
+        .main-nav a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; }
+        .main-nav a:hover { color: var(--accent-orange); }
+
+        .header-btn { padding: 10px 20px; font-size: 0.9rem; }
+
+        /* Page Header Section */
+        .page-header {
+            background-color: var(--dark-blue);
+            padding: 60px 10%;
+            text-align: center;
+            color: #fff;
+            border-bottom: 5px solid var(--accent-orange);
+        }
+
+        .page-header h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            margin: 0 0 15px 0;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Workbench Accordion Styles */
+        .workbench-section {
+            padding: 60px 10%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        details.appliance-tip {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        details.appliance-tip summary {
+            background-color: var(--section-bg);
+            padding: 20px 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            cursor: pointer;
+            list-style: none; /* Hides default arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        /* Custom plus/minus indicator */
+        details.appliance-tip summary::-webkit-details-marker { display: none; }
+        details.appliance-tip summary::after {
+            content: '+';
+            color: var(--accent-orange);
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        details[open].appliance-tip summary::after { content: '−'; }
+        details[open].appliance-tip summary { border-radius: 8px 8px 0 0; border-bottom: 2px solid var(--primary-blue); }
+
+        .tip-content {
+            padding: 30px;
+            color: var(--text-dark);
+        }
+
+        .tip-content h4 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .tip-content p { margin-bottom: 15px; }
+        .tip-content ul { padding-left: 20px; margin-bottom: 25px; }
+        .tip-content li { margin-bottom: 10px; }
+
+        .tip-cta {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            background-color: #fdfdfd;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .tip-cta p { font-weight: 600; color: var(--dark-blue); margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 70px 10% 40px 10%;
+            text-align: left; 
+            margin-top: 40px;
+        }
+        
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h3 { color: #fff; margin-top: 0; margin-bottom: 20px; font-size: 1.3rem; }
+        .footer-col p { margin: 10px 0; color: #bbb; font-size: 0.95rem; }
+        .footer-col a { color: var(--accent-orange); text-decoration: none; transition: color 0.3s ease; font-weight: 600; }
+        .footer-col a:hover { color: #fff; }
+        
+        .disclaimer { font-size: 0.8rem; color: #666; text-align: center; max-width: 900px; margin: 40px auto 10px auto; border-top: 1px solid #333; padding-top: 25px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            .main-nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .page-header h1 { font-size: 2.2rem; }
+            details.appliance-tip summary { font-size: 1.2rem; padding: 15px 20px; }
+            .tip-content { padding: 20px; }
+            footer { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Paris Appliance Repair LLC</a>
+        <nav class="main-nav">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#about">About</a>
+            <a href="tips.html" style="color: var(--accent-orange);">Wayne's Workbench</a>
+            <a href="links.html">Manufacturer Links</a>
+        </nav>
+        <a href="index.html#contact" class="btn header-btn">Contact Us</a>
+    </header>
+
+    <section class="page-header">
+        <h1>Wayne's Workbench</h1>
+        <p>Save time, money, and your sanity. Before you book a service call, check out these field-tested tips for keeping your appliances running perfectly in Paris, TX.</p>
+    </section>
+
+    <section class="workbench-section">
+
+        <details class="appliance-tip">
+            <summary>Why Your New HE Washer Acts "Weird" (And Why It’s Not Broken)</summary>
+            <div class="tip-content">
+                <p>Brought home a new High-Efficiency (HE) washer, pressed start, and immediately thought it was broken? You aren't alone! This is one of our most common service calls across Northeast Texas and Southeast Oklahoma. Before you call us out for a repair, here is a quick guide to why your new machine acts so differently:</p>
+
+                <h4>1. The "Dry Spin" (It’s Doing Math)</h4>
+                <p>Instead of instantly filling with a waterfall like old machines, your HE washer will click, hum, and slowly spin your dry clothes for several minutes. It is not broken. It is actually weighing the load to calculate the exact amount of water needed. Give it a few minutes, and the water will start.</p>
+
+                <h4>2. The "Where is the Water?" Cleaning Method</h4>
+                <p>Old washers drowned your laundry in a deep tub of water. HE washers use Friction and Concentration. They use just a little bit of water to make a highly concentrated soap mix, then the machine gently rubs the clothes together. Think about washing your hands: you don't just wave them underwater; you rub them together. The friction is what removes the dirt!</p>
+
+                <h4>3. The Golden Soap Rule: Line 1 is All You Need!</h4>
+                <p>Detergent companies want to sell more soap, so those giant measuring cups encourage you to use way too much. Excess soap actually cushions the clothes (ruining the cleaning friction), traps dirt, causes moldy smells, and damages the washer's sensors.</p>
+                <ul>
+                    <li><strong>The Fix:</strong> Look inside the cap and only fill it to Line 1 (or Line 2 for extra dirty loads). That is actually the perfect amount for an HE machine! When in doubt, picture a standard laundry pod—that tiny amount of liquid is truly all it takes to clean a whole load.</li>
+                </ul>
+
+                <div class="tip-cta">
+                    <p>Did these tips not solve your washer issue?</p>
+                    <a href="index.html#contact" class="btn">Schedule Washer Repair</a>
+                </div>
+            </div>
+        </details>
+
+        <details class="appliance-tip">
+            <summary>The "Broken" Dryer That Just Needs to Breathe</summary>
+            <div class="tip-content">
+                <p>"My dryer is running, but my clothes are still wet!" It's one of our most common calls, but here is an industry secret: 80% of the time, the dryer isn't broken. It just can't breathe. Dryers need three things to work: Heat, Tumbling, and Airflow. If it is getting hot and spinning, but taking hours to dry, your airflow is blocked. Before calling for a repair, try these three quick DIY checks:</p>
+
+                <h4>1. The 2-Minute Outside Test</h4>
+                <p>Turn your empty dryer on High Heat. Walk outside to your house's exhaust vent. You should feel a strong blast of hot air. If it’s barely trickling, your vent is plugged with lint.</p>
+                <ul>
+                    <li><strong>Pro-Tip:</strong> (Roof vent? Buy an inexpensive, universal "dryer airflow test kit" on Amazon to safely test the airflow right from your laundry room!)</li>
+                </ul>
+
+                <h4>2. The "Crushed Pipe" Flashlight Check</h4>
+                <p>Often, dryers get shoved too far back, completely crushing the flexible aluminum exhaust hose. Peek over the back of the machine with a flashlight. If the pipe is flat as a pancake, carefully pull the dryer forward!</p>
+                <ul>
+                    <li><strong>Need to save space?</strong> Buy a rigid "flat dryer vent kit" from a hardware store. They let you push the dryer almost flush against the wall without cutting off the air.</li>
+                </ul>
+
+                <h4>3. The Sticky Lint Warning Sign</h4>
+                <p>Open your dryer door. Is there fuzzy lint stuck directly to the inside of the door, while the actual lint trap is mostly empty? Without enough airflow to pull lint down into the screen, it just swirls around the drum and sticks to the door instead.</p>
+                <ul>
+                    <li><strong>The Fix:</strong> If your vent is clogged or crushed, stop running the dryer! Trapped heat will eventually blow the internal safety fuse or start a fire. Fix the crushed pipe or get the vent professionally cleaned, and your "broken" dryer will be back to working perfectly!</li>
+                </ul>
+
+                <div class="tip-cta">
+                    <p>Airflow looks good but still no heat?</p>
+                    <a href="index.html#contact" class="btn">Schedule Dryer Repair</a>
+                </div>
+            </div>
+        </details>
+
+        <details class="appliance-tip">
+            <summary>Why Your New Dishwasher Leaves Dishes Dirty (or Wet!)</summary>
+            <div class="tip-content">
+                <p>Your new dishwasher probably isn't broken. Modern, quiet dishwashers use completely different technology than loud, older models. To get dishes perfectly clean and dry, you need to break a few old habits:</p>
+
+                <h4>1. Don't Wash Your Dishes Before You Wash Your Dishes!</h4>
+                <p>Modern dishwashers use optical "soil sensors." If you pre-rinse everything, the sensor thinks the dishes are clean and runs a weak cycle. Detergent needs food residue to activate. Scrape chunks into the trash, but leave the sauce!</p>
+                <ul>
+                    <li><strong>Exceptions:</strong> If it requires heavy scrubbing at the sink (baked-on cheese), wash it by hand. If you only run the dishwasher weekly, lightly rinse your plates so the food doesn't dehydrate and turn to cement.</li>
+                </ul>
+
+                <h4>2. Ditch the Gel and Cheap Soap</h4>
+                <p>Local water conditions make liquid gel detergent a recipe for gunky residue around your door seals. Switch to a mid-to-premium pod. Cheap generic pods are often just basic powder wrapped in plastic, whereas premium pods contain the exact enzymes modern machines need.</p>
+
+                <h4>3. Rinse Aid is Mandatory (But Plastics Will Still Be Wet!)</h4>
+                <p>To meet energy standards, new dishwashers don't use giant, red-hot heating elements. They rely on the residual heat of the hot water to dry your dishes. Rinse Aid is no longer optional—it breaks the surface tension so water sheets off instead of pooling.</p>
+                <ul>
+                    <li><strong>The Plastic Rule:</strong> Because plastic doesn't retain heat like glass or ceramic, it cools down too fast for the water to evaporate. For the most part, modern dishwashers will never get your plastics 100% dry!</li>
+                </ul>
+
+                <h4>4. Clean the Hidden Filter Monthly</h4>
+                <p>Manufacturers made new dishwashers quiet by removing the loud, built-in hard food grinders. Instead, they use a manual mesh filter under the bottom rack. If your machine smells or leaves a gritty film, remove it and scrub it with warm water and an old toothbrush.</p>
+                <ul>
+                    <li>(Not sure how to remove your filter? Head over to our <a href="links.html">Links Page</a> for direct access to your manufacturer's specific manuals and instructions!)</li>
+                </ul>
+
+                <div class="tip-cta">
+                    <p>Is it still not draining or washing properly?</p>
+                    <a href="index.html#contact" class="btn">Schedule Dishwasher Repair</a>
+                </div>
+            </div>
+        </details>
+
+        <details class="appliance-tip">
+            <summary>The Refrigerator Rules</summary>
+            <div class="tip-content">
+                <p>Are your groceries spoiling fast, or are you accidentally freezing your lettuce? Here is the industry standard for a healthy, efficient fridge:</p>
+
+                <h4>1. The Freezer: Set to 0°F</h4>
+                <p>Going colder (-5°F or -10°F) won't make food last longer. It just forces your compressor to work overtime, wasting electricity and prematurely wearing out your machine.</p>
+
+                <h4>2. The Refrigerator: Set to 37°F</h4>
+                <p>Food spoils at 40°F and water freezes at 32°F. Setting your fridge right in the middle at 37°F is the perfect sweet spot. It keeps milk safe without accidentally freezing your vegetables.</p>
+
+                <h4>3. The "Overstuffed" Airflow Problem</h4>
+                <p>If milk spoils in the door but lettuce freezes on top, your fridge is probably suffocating. Most fridges blow cold air from the freezer into the fresh food side, and that air needs room to circulate down the back wall.</p>
+                <ul>
+                    <li><strong>The Fix:</strong> Never push groceries past the back edge of the shelf. Always leave a gap against the back wall so cold air can flow from top to bottom.</li>
+                </ul>
+
+                <h4>4. The Slow Water Dispenser (The Filter Trap)</h4>
+                <p>A painfully slow water dispenser usually means a clogged filter, not a broken water valve. Change your filter every 6 months, and always buy OEM (Original Equipment Manufacturer) brands.</p>
+                <ul>
+                    <li><strong>The "Buy Two" Rule:</strong> Filter carbon blocks are fragile and can shatter during shipping, jamming the valve before you even install it. We highly recommend buying two at a time. If the first one restricts flow right out of the box, you have a backup ready!</li>
+                </ul>
+
+                <h4>5. The "Texas Garage & Shop" Warning</h4>
+                <p>Standard refrigerators are engineered to live inside a climate-controlled kitchen (between 60°F and 90°F). When you put a fridge in an uninsulated Texas garage or metal shop, you are going to lose cooling at both extremes of the weather:</p>
+                <ul>
+                    <li><strong>The Summer Heat (115°F+):</strong> A refrigerator cools by dumping heat from the inside into the air outside. If your shop is boiling at 120°F, the air is too hot for the fridge to shed its heat. It will run 24/7, but the inside will simply stop getting cold.</li>
+                    <li><strong>The Winter Freeze (30°F or lower):</strong> If a winter storm drops your shop below freezing, the thermostat inside the fresh food section thinks its job is done. It never tells the compressor to turn on. Because the compressor never runs, your <em>freezer</em> compartment completely thaws out!</li>
+                    <li><strong>The "Garage-Ready" Myth:</strong> Even "Garage-Ready" units have strict limits! Most are only rated to handle ambient temperatures between <strong>38°F and 110°F</strong>. A closed Texas shop in August or a freak winter freeze will easily beat those numbers, causing your unit to completely stop cooling.</li>
+                </ul>
+
+                <div class="tip-cta">
+                    <p>Did these tips not solve your cooling issue?</p>
+                    <a href="index.html#contact" class="btn">Schedule Fridge Repair</a>
+                </div>
+            </div>
+        </details>
+
+        <details class="appliance-tip">
+            <summary>The Oven & Range Rules</summary>
+            <div class="tip-content">
+                <p>Are your family recipes failing in a brand-new oven, or are you prepping for a holiday? Here are the critical rules to keep your oven baking perfectly and out of the repair graveyard:</p>
+
+                <h4>1. Why Your New Oven Cooks Differently</h4>
+                <p>Even when professionally calibrated, new ovens can feel like they are undercooking for two reasons:</p>
+                <ul>
+                    <li><strong>You Used to Cook on a "Broken" Oven:</strong> Old oven sensors wear out and often run 25–40 degrees hotter than the dial says. You likely adjusted your recipes to a miscalibrated machine. Try bumping your new oven's temperature up by 15 degrees!</li>
+                    <li><strong>The "Preheat Beep" is Lying:</strong> New ovens beep the second the <em>air</em> gets hot, but the heavy metal walls are still cold. If you open the door, all the heat escapes. <strong>The Fix:</strong> Wait an extra 10 to 15 minutes <em>after</em> the beep so the walls absorb the heat.</li>
+                </ul>
+
+                <h4>2. The "Pre-Holiday" Self-Clean Trap</h4>
+                <p>The 900°F self-clean cycle is a massive stress test for safety fuses and electronic boards. If a fuse is already weak, that extreme heat will finally pop it, completely shutting down your oven.</p>
+                <ul>
+                    <li><strong>The Fix:</strong> Never run self-clean the week of Thanksgiving! Do it a full month in advance, or stick to elbow grease and the low-heat "Steam Clean" setting for quick touch-ups.</li>
+                </ul>
+
+                <h4>3. The Foil Trap (Never Line the Bottom!)</h4>
+                <p>Lining the oven floor with foil or silicone mats will permanently destroy your appliance:</p>
+                <ul>
+                    <li><strong>The "Warpage" Danger (Hidden Elements):</strong> Trapping heat underneath the oven floor superheats the metal, causing it to permanently warp, crack the enamel, and quickly burn out the hidden element.</li>
+                    <li><strong>The "Mirror" Effect (Exposed Elements):</strong> Foil acts as a giant heat mirror, bouncing radiant heat straight up and confusing the thermostat. This causes wild heat swings and uneven baking.</li>
+                    <li><strong>The Fix:</strong> To catch drips, put a baking sheet or drip pan on the <em>lowest wire rack</em>—never directly on the oven floor.</li>
+                </ul>
+
+                <div class="tip-cta">
+                    <p>Still having trouble with uneven baking or a dead control board?</p>
+                    <a href="index.html#contact" class="btn">Schedule Oven Repair</a>
+                </div>
+            </div>
+        </details>
+
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> <a href="tel:9032720840">(903) 272-0840</a></p>
+                <p><strong>Email:</strong> <a href="mailto:parisappliancerepair@gmail.com">parisappliancerepair@gmail.com</a></p>
+                <p style="margin-top: 15px;"><em>Proudly serving Northeast Texas and Southeast Oklahoma.</em></p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Business Hours</h3>
+                <p><strong>Monday - Friday:</strong><br>8:00 AM – 12:00 PM<br>1:00 PM – 5:00 PM</p>
+                <p style="margin-top: 10px;"><strong>Saturday & Sunday:</strong><br>Closed</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Service Areas</h3>
+                <p style="font-size: 0.85rem; line-height: 1.8; color: #999;">
+                    <strong style="color: #ddd;">Primary Local Area:</strong><br>
+                    Arthur City, Blossom, Brookston, Chicota, Deport, Detroit, Paris, Pattonville, Petty, Powderly, Roxton, Sumner.<br><br>
+                    <strong style="color: #ddd;">Extended Area:</strong><br>
+                    Annona, Avery, Bagwell, Ben Franklin, Bogata, Bonham, Brashear, Campbell, Clarksville, Commerce, Como, Cooper, Cumby, Cunningham, Dike, Dodd City, Enloe, Fort Towson, Garvin, Grant, Honey Grove, Hugo, Klondike, Ladonia, Lake Creek, Mount Vernon, Pecan Gap, Pickton, Saltillo, Sawyer, Scroggins, Sulphur Bluff, Sulphur Springs, Talco, Valliant, Windom, Winnsboro, Wolfe City.
+                </p>
+            </div>
+        </div>
+        
+        <p class="disclaimer">
+            <em>Whirlpool, Maytag, KitchenAid, JennAir, Amana, Speed Queen, GE, Monogram, Café, GE Profile, and Hotpoint are registered trademarks of their respective owners. Paris Appliance Repair LLC is an independent service provider authorized to perform repairs on these brands. Any other trademarks or brand names mentioned are the property of their respective owners.</em>
+        </p>
+        
+        <p style="font-size: 0.9rem; color: #555; margin-top: 15px; text-align: center;">© 2026 Paris Appliance Repair LLC. All Rights Reserved. | <a href="privacy.html" style="color: #888; text-decoration: underline;">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>

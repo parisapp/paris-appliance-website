@@ -96,19 +96,6 @@
             box-shadow: 0 6px 20px rgba(242, 106, 33, 0.4);
         }
 
-        .top-alert-banner {
-            background-color: var(--dark-blue);
-            color: #fff;
-            text-align: center;
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .top-alert-banner strong {
-            color: var(--accent-orange);
-            letter-spacing: 0.5px;
-        }
-
         header {
             background-color: #fff;
             padding: 15px 5%;
@@ -654,17 +641,14 @@
 </head>
 <body>
 
-    <div class="top-alert-banner">
-        <strong>⚠️ SERVICE UPDATE:</strong> Due to high local demand, we are currently experiencing extended wait times for new appointments. We greatly appreciate your patience!
-    </div>
-
     <header>
         <a href="#" class="logo">Paris Appliance Repair LLC</a>
         <nav class="main-nav">
             <a href="#services">Services</a>
             <a href="#reviews">Reviews</a>
             <a href="#about">About</a>
-            <a href="links.html">Useful Links</a>
+            <a href="tips.html">Wayne's Workbench</a>
+            <a href="links.html">Manufacturer Links</a>
         </nav>
         <a href="#contact" class="btn header-btn">Contact Us</a>
     </header>
@@ -876,6 +860,7 @@
                         <select id="contact-pref" name="Contact_Preference" class="form-control" required>
                             <option value="" disabled selected>How should we reach you?</option>
                             <option value="Phone Call">Phone Call</option>
+                            <option value="Text Message">Text Message</option>
                             <option value="Email">Email</option>
                         </select>
                     </div>
@@ -919,7 +904,7 @@
                     <div class="form-group full-width" style="background-color: #f8f9fa; padding: 12px; border-radius: 6px; border: 1px dashed #ccc;">
                         <label for="photo" style="margin-bottom: 2px;">Take or Upload a Photo of the Data Tag <span style="font-weight: 400; color: #666;">(Optional)</span></label>
                         <p style="font-size: 0.75rem; color: #666; margin-top: 0; margin-bottom: 8px;">Tap below to open your camera or select an existing picture of the sticker showing your model and serial number.</p>
-                        <input type="file" id="photo" name="Data_Tag_Photo" accept="image/*" class="form-control" style="border: none; padding: 0; background: transparent;">
+                        <input type="file" id="photo" name="Data_Tag_Photo" accept="image/*, android/allowCamera" class="form-control" style="border: none; padding: 0; background: transparent;">
                     </div>
                     
                     <div class="form-group full-width">
@@ -928,11 +913,6 @@
                     </div>
 
                     <div class="sms-consent-box full-width">
-                        
-                        <div style="background-color: #fff8eb; border-left: 3px solid var(--accent-orange); padding: 10px; margin-bottom: 15px; border-radius: 4px; font-size: 0.85rem; color: var(--text-dark);">
-                            <strong>📱 Temporary Texting Notice:</strong> We can currently <em>receive</em> incoming text messages and photos, but we are temporarily unable to send outgoing text replies while our mobile carrier updates our system. <strong>We will gladly respond to your request via phone call or email!</strong>
-                        </div>
-                        
                         <p class="sms-legal-text">Paris Appliance Repair would like your consent to send informational text message communications from +19032720840 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us.</p>
                         
                         <p class="sms-legal-text">Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information. We do not share your mobile opt-in information with anyone. See our <a href="privacy.html" target="_blank">privacy policy and messaging terms and conditions</a> for more information.</p>
